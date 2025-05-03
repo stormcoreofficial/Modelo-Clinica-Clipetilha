@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClipeTilha - Clínica Veterinária | 7 Anos de Excelência</title>
+    <meta name="description" content="Clinica veterinária com 7 anos de experiência em cuidados para seus pets. Consultas, exames, vacinas e emergências 24h.">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #28a745;
+            --primary-dark: #218838;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --light-text: #6c757d;
+            --white: #fff;
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Fredoka One', cursive;
+        }
+        
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: rgba(255,255,255,0.98);
+        }
+        
+        .navbar-brand {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.8rem;
+        }
+        
+        .navbar-brand span.clipet {
+            color: var(--primary-color);
+        }
+        
+        .navbar-brand span.tilha {
+            color: var(--text-color);
+        }
+        
+        .nav-link {
+            color: var(--text-color) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://ucarecdn.com/cf62c479-f79c-4143-9312-5fabe1a0b42c/pngtreegoldenretrieverdoghappyimage_2576692.jpg') no-repeat center center;
+            background-size: cover;
+            color: var(--white);
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .hero .btn {
+            margin: 10px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--secondary-color);
+        }
+        
+        .about-img {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        
+        .about-img:hover {
+            transform: scale(1.02);
+        }
+        
+        .pet-images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .pet-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .pet-img:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Clinic Section */
+        .clinic {
+            padding: 100px 0;
+            background: url('https://images.unsplash.com/photo-1530036854756-6d65f53e2594?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            color: var(--white);
+        }
+        
+        .clinic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(40, 167, 69, 0.9);
+        }
+        
+        .clinic .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .clinic h2 {
+            color: var(--white);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .clinic h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-dark);
+        }
+        
+        /* Exams & Vaccines Section */
+        .exams-vaccines {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .exam-card, .vaccine-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .exam-card:hover, .vaccine-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .exam-card h4, .vaccine-card h4 {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .exam-card h4 i, .vaccine-card h4 i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: var(--secondary-color);
+        }
+        
+        .service-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .service-body {
+            padding: 20px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .contact-form {
+            background: var(--secondary-color);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .form-control {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+        }
+        
+        .contact-info {
+            padding: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--text-color);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-links h5 {
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h5::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #adb5bd;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+            text-align: center;
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .pet-img {
+                width: 90px;
+                height: 90px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 0 80px;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .btn {
+                display: block;
+                width: 80%;
+                margin: 10px auto;
+            }
+            
+            .about, .clinic, .exams-vaccines, .services, .contact {
+                padding: 70px 0;
+            }
+            
+            .contact-form, .contact-info {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .pet-img {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5511999999999" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><span class="clipet">Clipet</span><span class="tilha">ilha</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#consulta">Consulta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#exames">Exames</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vacinas">Vacinas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre Nós</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <h1 class="animate__animated animate__fadeInDown">Cuidando do seu pet com amor e expertise</h1>
+                    <p class="animate__animated animate__fadeIn animate__delay-1s">7 anos dedicados à saúde e bem-estar dos seus animais de estimação</p>
+                    <div class="animate__animated animate__fadeIn animate__delay-2s">
+                        <a href="#consulta" class="btn btn-primary btn-lg">Agendar Consulta</a>
+                        <a href="#sobre" class="btn btn-outline-light btn-lg">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="Clínica Veterinária" class="img-fluid rounded">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2>Sobre Nós</h2>
+                    <p>A ClipeTilha é referência em cuidados veterinários há 7 anos, oferecendo atendimento especializado e personalizado para seu pet.</p>
+                    <p>Nossa equipe de profissionais altamente qualificados está comprometida em proporcionar o melhor tratamento para seu animal de estimação, com tecnologia avançada e muito carinho.</p>
+                    <p>Venha nos conhecer e descubra por que somos a escolha de tantos tutores que buscam excelência no cuidado com seus pets.</p>
+                    <a href="#contato" class="btn btn-primary mt-3">Ver Endereço</a>
+                    
+                    <div class="pet-images">
+                        <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="Gato" class="pet-img">
+                        <img src="https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=689&q=80" alt="Cachorro" class="pet-img">
+                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1143&q=80" alt="Gato" class="pet-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Clinic Section -->
+    <section class="clinic">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="zoom-in">
+                    <h2 class="mb-4">Nossa Clínica Veterinária</h2>
+                    <p class="lead">Um espaço completo projetado para oferecer conforto e bem-estar aos seus animais de estimação, com equipamentos modernos e ambiente acolhedor.</p>
+                    <p>Na ClipeTilha, entendemos que seu pet é parte da família. Por isso, oferecemos uma gama completa de serviços, desde consultas preventivas até tratamentos complexos e cirurgias, tudo realizado por uma equipe de veterinários altamente capacitados e apaixonados por animais.</p>
+                    <p>Nosso compromisso vai além do tratamento - queremos construir relacionamentos duradouros baseados em confiança e cuidado excepcional. Seja para uma consulta de rotina ou uma emergência, estamos prontos para oferecer o melhor atendimento veterinário com ética, transparência e muito amor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Exams & Vaccines Section -->
+    <section class="exams-vaccines" id="exames">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Exames e Vacinas</h2>
+                <p class="lead">Oferecemos exames laboratoriais completos e o programa de vacinação mais atualizado</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h3 class="text-center mb-4"><i class="fas fa-flask"></i> Exames Realizados</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="exam-card">
+                                <h4><i class="fas fa-vial"></i> Laboratoriais</h4>
+                                <ul>
+                                    <li>Hemogramas completos</li>
+                                    <li>Análises bioquímicas</li>
+                                    <li>Testes hormonais</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="exam-card">
+                                <h4><i class="fas fa-microscope"></i> Diagnósticos</h4>
+                                <ul>
+                                    <li>Citologias e urinálises</li>
+                                    <li>Exames parasitológicos</li>
+                                    <li>Análise de líquidos</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="exam-card">
+                                <h4><i class="fas fa-dna"></i> Especializados</h4>
+                                <ul>
+                                    <li>Testes rápidos</li>
+                                    <li>Biologia molecular</li>
+                                    <li>Histopatológicos</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="exam-card">
+                                <h4><i class="fas fa-heartbeat"></i> Painéis</h4>
+                                <ul>
+                                    <li>Hemogasometria</li>
+                                    <li>Painel de eletrólitos</li>
+                                    <li>Coagulograma</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="text-center mb-4"><i class="fas fa-syringe"></i> Vacinas</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="vaccine-card">
+                                <h4><i class="fas fa-dog"></i> Caninas</h4>
+                                <ul>
+                                    <li>Múltiplas (V8/V10)</li>
+                                    <li>Antirrábica</li>
+                                    <li>Tosse dos canis</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="vaccine-card">
+                                <h4><i class="fas fa-cat"></i> Felinas</h4>
+                                <ul>
+                                    <li>Múltiplas (V3/V4/V5)</li>
+                                    <li>Antirrábica</li>
+                                    <li>Giardia</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="vaccine-card">
+                                <h4><i class="fas fa-shield-alt"></i> Prevenção</h4>
+                                <ul>
+                                    <li>Dirofilariose</li>
+                                    <li>Vermífugação</li>
+                                    <li>Protocolos personalizados</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="vaccine-card">
+                                <h4><i class="fas fa-calendar-check"></i> Programas</h4>
+                                <ul>
+                                    <li>Filhotes</li>
+                                    <li>Adultos</li>
+                                    <li>Idosos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4" data-aos="fade-up">
+                <a href="#contato" class="btn btn-primary btn-lg">Agendar Consulta</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services" id="consulta">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Nossos Serviços</h2>
+                <p class="lead">Cuidados completos para todas as fases da vida do seu pet</p>
+            </div>
+            
+            <div class="row">
+                <!-- Service 1 -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up">
+                    <div class="service-card">
+                        <img src="https://ucarecdn.com/87053a56-e3f4-4520-a97d-b53549453fcb/veterinariopertodemimatendepet.jpg" alt="Consulta Veterinária" class="service-img">
+                        <div class="service-body">
+                            <h4>Consulta Veterinária</h4>
+                            <p>Avaliação completa da saúde do seu pet com profissionais especializados.</p>
+                            <a href="#contato" class="btn btn-sm btn-outline-primary">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <img src="https://ucarecdn.com/379cb2ad-cf67-46aa-8a21-9796ac7292ae/vacinasparacachorros41.webp" alt="Vacinação" class="service-img">
+                        <div class="service-body">
+                            <h4>Vacinação</h4>
+                            <p>Programa completo de imunização seguindo protocolos internacionais.</p>
+                            <a href="#contato" class="btn btn-sm btn-outline-primary">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <img src="https://ucarecdn.com/b3c45a4a-f59b-4141-98f4-fc421ca9026a/1640075079991cirugiaveterinariahuelva1920w.webp" alt="Cirurgia" class="service-img">
+                        <div class="service-body">
+                            <h4>Cirurgia Veterinária</h4>
+                            <p>Procedimentos cirúrgicos realizados com equipamentos de última geração.</p>
+                            <a href="#contato" class="btn btn-sm btn-outline-primary">Saber mais</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <img src="https://ucarecdn.com/3162c291-c750-4fb6-b002-958a0a98db66/1631022023011763c6e96679322.png" alt="Exames" class="service-img">
+                        <div class="service-body">
+                            <h4>Exames Diagnósticos</h4>
+                            <p>Raio-X, ultrassonografia, eletrocardiograma e laboratório completo.</p>
+                            <a href="#contato" class="btn btn-sm btn-outline-primary">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <img src="https://ucarecdn.com/085ad00c-0103-4197-ad8f-bc8ef50ea815/VetVilaIsabelFotoBrunodeLima030.jpg" alt="Internação" class="service-img">
+                        <div class="service-body">
+                            <h4>Internação</h4>
+                            <p>Alojamento seguro e monitorado 24h para recuperação do seu pet.</p>
+                            <a href="#contato" class="btn btn-sm btn-outline-primary">Saber mais</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card">
+                        <img src="https://ucarecdn.com/35f1d6d1-d8dd-4b03-9288-d0bacdb3c6e9/adobestock164033225min.jpeg" alt="Cremação" class="service-img">
+                        <div class="service-body">
+                            <h4>Remoção e Cremação</h4>
+                            <p>Serviço humanizado para despedida do seu companheiro.</p>
+                            <a href="#contato" class="btn btn-sm btn-outline-primary">Informações</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contato">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Entre em Contato</h2>
+                <p class="lead">Estamos aqui para ajudar no que seu pet precisar</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="contact-form">
+                        <h4 class="mb-4">Envie uma mensagem</h4>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Seu nome" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Seu e-mail" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" placeholder="Seu telefone">
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option>Assunto</option>
+                                    <option>Agendamento de consulta</option>
+                                    <option>Informações sobre exames</option>
+                                    <option>Vacinação</option>
+                                    <option>Outros</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="4" placeholder="Sua mensagem"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="contact-info">
+                        <h4 class="mb-4">Nossos Contatos</h4>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Endereço</h5>
+                                <p>Rua Exemplo, 123 - Centro<br>São Paulo/SP - CEP 01000-000</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Telefone</h5>
+                                <p>(11) 9999-9999 (WhatsApp)<br>(11) 3333-3333 (Fixo)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>E-mail</h5>
+                                <p>contato@clipetilha.com.br</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5>Horário de Funcionamento</h5>
+                                <p>Segunda a Sexta: 8h às 19h<br>Sábado: 8h às 14h<br>Plantão 24h para emergências</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-5" data-aos="zoom-in">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0754267452926!2d-46.65342658447536!3d-23.565734367638155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1638913661378!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="footer-logo">Clipe<span style="color: var(--primary-color);">Tilha</span></h5>
+                    <p>7 anos cuidando do seu pet com amor e dedicação. Excelência em medicina veterinária e bem-estar animal.</p>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-links">Links</h5>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#exames">Exames</a></li>
+                        <li><a href="#vacinas">Vacinas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-links">Serviços</h5>
+                    <ul>
+                        <li><a href="#consulta">Consultas</a></li>
+                        <li><a href="#exames">Exames</a></li>
+                        <li><a href="#vacinas">Vacinação</a></li>
+                        <li><a href="#servicos">Cirurgias</a></li>
+                        <li><a href="#servicos">Internação</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="footer-links">Contato</h5>
+                    <ul>
+                        <li><i class="fas fa-phone-alt me-2"></i> (11) 9999-9999</li>
+                        <li><i class="fas fa-envelope me-2"></i> contato@clipetilha.com.br</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Rua Exemplo, 123 - SP</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Clipetilha - Clínica Veterinária. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Navbar scroll effect
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('.navbar').addClass('scrolled');
+            } else {
+                $('.navbar').removeClass('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        $('a[href*="#"]').on('click', function(e) {
+            e.preventDefault();
+            
+            $('html, body').animate(
+                {
+                    scrollTop: $($(this).attr('href')).offset().top - 70,
+                },
+                500,
+                'linear'
+            );
+        });
+        
+        // Add animation to pet images on hover
+        $('.pet-img').hover(
+            function() {
+                $(this).css('transform', 'scale(1.1)');
+            },
+            function() {
+                $(this).css('transform', 'scale(1)');
+            }
+        );
+    </script>
+</body>
+</html>
